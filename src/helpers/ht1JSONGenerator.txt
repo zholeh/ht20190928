@@ -1,0 +1,22 @@
+[
+  '{{repeat(500, 500)}}',
+  {
+    id: '{{objectId()}}',
+    img: '/assets/img/ht1/img{{ integer(1, 8) }}.jpg',
+    address: '{{integer(100, 999)}} {{street()}}, {{city()}}, {{state()}}, {{integer(100, 10000)}}',
+    phone: '380{{random("67", "50", "97", "63")}}{{phone("xxxxxxx")}}',
+    weather: {
+      title: '{{lorem(1, "words")}}',
+      icon: '/assets/icons/weather/icon{{ integer(1, 63) }}.png',
+      water: '{{integer(0, 40)}}',
+      temperature: '{{integer(-40, 40)}}'
+    },
+    social_info:{
+      title: '{{lorem(1, "words")}}',
+      img: '/assets/img/ht1/img{{ integer(1, 8) }}.jpg',
+      followers: '{{integer(0, 1000)}}',
+      following: '{{integer(0, 1000)}}'
+    },
+    type: '{{random("Hotel", "Fishing", "Tours", "Weather")}}'
+  }
+]

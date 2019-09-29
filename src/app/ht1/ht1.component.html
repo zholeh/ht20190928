@@ -1,0 +1,90 @@
+<div *ngIf="data; else load" style="padding: 0 5%">
+  <mat-grid-list cols="2" rowHeight="2:1">
+    <mat-grid-tile>
+      <img [src]="data[currentItem].img" alt="" />
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-card class="example-card">
+        <mat-card-header>
+          <mat-card-title>{{ data[currentItem].weather.title }}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <img [src]="data[currentItem].weather.icon" alt="" />
+          <span style="font-size: -webkit-xxx-large;">{{ data[currentItem].weather.temperature }}°</span>
+        </mat-card-content>
+        <mat-card-actions>
+          <div>
+            <span>Water: </span>
+            <span>{{ data[currentItem].weather.water }}°</span>
+          </div>
+        </mat-card-actions>
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-card class="example-card example-card2">
+        <mat-card-header>
+          <mat-card-title class="app-card-title">
+            <span
+              *ngFor="let cartHeader of cartHeaders; trackBy: cartHeader"
+              [ngClass]="{ 'app-card-title-marked': cartHeader === data[currentItem].type }"
+              >{{ cartHeader }}</span
+            >
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <div>
+            <span>
+              Resort address:
+            </span>
+            <span>
+              {{ data[currentItem].address }}
+            </span>
+          </div>
+          <br />
+          <div>
+            <span>Tel: </span>
+            <span>+{{ '' + data[currentItem].phone | slice: 0:2 }}</span>
+            <span> ({{ '' + data[currentItem].phone | slice: 2:5 }}) </span>
+            <span>{{ '' + data[currentItem].phone | slice: 5:8 }}</span>
+            <span>-{{ '' + data[currentItem].phone | slice: 8:10 }}-</span>
+            <span>{{ '' + data[currentItem].phone | slice: -2 }}</span> G
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-card class="example-card example-card3">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>{{ data[currentItem].social_info.title }}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <img [src]="data[currentItem].social_info.img" alt="" class="round-img" />
+        </mat-card-content>
+        <mat-card-actions>
+          <span class="followers">
+            <span>{{ data[currentItem].social_info.followers }}</span>
+            <span>Followers</span>
+          </span>
+          <span class="following">
+            <span>{{ data[currentItem].social_info.following }}</span>
+            <span>Following</span>
+          </span>
+        </mat-card-actions>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+  <mat-paginator
+    [length]="paginationLength"
+    [hidePageSize]="true"
+    [showFirstLastButtons]="true"
+    [pageSize]="1"
+    (page)="changePage($event)"
+  >
+  </mat-paginator>
+</div>
+<ng-template #load>
+  <div class="load-container">
+    <mat-spinner></mat-spinner>
+  </div>
+</ng-template>
