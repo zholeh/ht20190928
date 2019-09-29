@@ -25,7 +25,7 @@
         <mat-card-header>
           <mat-card-title class="app-card-title">
             <span
-              *ngFor="let cartHeader of cartHeaders; trackBy: cartHeader"
+              *ngFor="let cartHeader of cartHeaders"
               [ngClass]="{ 'app-card-title-marked': cartHeader === data[currentItem].type }"
               >{{ cartHeader }}</span
             >
