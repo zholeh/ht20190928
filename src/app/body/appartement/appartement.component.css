@@ -1,0 +1,12 @@
+mat-toolbar {
+  width: 100%
+}
+mat-list-item {
+  height: auto!important;
+  margin: 1rem 0;  
+}
+
+mat-list {
+  overflow: scroll;
+  height: inherit!important;
+}

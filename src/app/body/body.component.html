@@ -1,0 +1,20 @@
+<div *ngIf="apartments$ | async as appartements; else load">
+  <mat-grid-list cols="2" rowHeight="2:1">
+    <mat-grid-tile>
+      <img [src]="appartements[currentItem].img" alt="" />
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <app-weather></app-weather>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <app-appartement [appartements]="appartements" class="appartement"></app-appartement>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <app-social-info></app-social-info>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
+
+<ng-template #load>
+  <app-spinner></app-spinner>
+</ng-template>

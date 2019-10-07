@@ -1,0 +1,28 @@
+<mat-toolbar>
+  <button mat-button *ngFor="let appartementType of appartementsType">
+    {{ appartementType }}
+  </button>
+</mat-toolbar>
+
+<mat-list role="list">
+  <mat-list-item role="listitem" *ngFor="let appartement of appartements">
+    <div class="mat-list-wrapper">
+      <div>
+        <span>Type: {{ appartement.type }}</span>
+      </div>
+      <div>
+        <span>Resort address: {{ appartement.address }}</span>
+        <div>
+          <span>Tel: </span>
+          <span>+{{ '' + appartement.phone | slice: 0:2 }}</span>
+          <span> ({{ '' + appartement.phone | slice: 2:5 }}) </span>
+          <span>{{ '' + appartement.phone | slice: 5:8 }}</span>
+          <span>-{{ '' + appartement.phone | slice: 8:10 }}-</span>
+          <span>{{ '' + appartement.phone | slice: -2 }}</span>
+        </div>
+      </div>
+
+      <mat-divider></mat-divider>
+    </div>
+  </mat-list-item>
+</mat-list>
