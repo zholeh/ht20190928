@@ -9,5 +9,5 @@ import { IWeather } from 'src/app/mock/mock';
 export class WeatherComponent {
 
   @Input()
-  public weather: IWeather[];
+  public weather: IWeather;
 }

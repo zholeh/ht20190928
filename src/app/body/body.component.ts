@@ -11,4 +11,7 @@ import { IApartment } from '../mock/mock';
 export class BodyComponent {
   public apartments$: Observable<IApartment[]> = MockData.apartments$;
   public currentItem: number = 0;
+  public currentItemChange(currentItem: number): void {
+    this.currentItem = currentItem;
+  }
 }

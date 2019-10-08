@@ -5,7 +5,11 @@
 </mat-toolbar>
 
 <mat-list role="list">
-  <mat-list-item role="listitem" *ngFor="let appartement of appartements">
+  <mat-list-item
+    role="listitem"
+    *ngFor="let appartement of appartements; index as index"
+    (click)="onClick(index)"
+  >
     <div class="mat-list-wrapper">
       <div>
         <span>Type: {{ appartement.type }}</span>

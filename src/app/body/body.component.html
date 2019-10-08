@@ -7,10 +7,17 @@
       <app-weather [weather]="appartements[currentItem].weather" class="weather"></app-weather>
     </mat-grid-tile>
     <mat-grid-tile>
-      <app-appartement [appartements]="appartements" class="appartement"></app-appartement>
+      <app-appartement
+        [appartements]="appartements"
+        class="appartement"
+        (onCurrentItemChange)="currentItemChange($event)"
+      ></app-appartement>
     </mat-grid-tile>
     <mat-grid-tile>
-      <app-social-info [socialInfo]="appartements[currentItem].social_info" class="social-info"></app-social-info>
+      <app-social-info
+        [socialInfo]="appartements[currentItem].social_info"
+        class="social-info"
+      ></app-social-info>
     </mat-grid-tile>
   </mat-grid-list>
 </div>
