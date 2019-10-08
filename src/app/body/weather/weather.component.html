@@ -1,1 +1,15 @@
-<p>weather works!</p>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title class="mat-display-3 content-center">{{ weather.title }}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content class="content-center">
+    <img [src]="weather.icon" alt="" />
+    <span class="mat-display-1">{{ weather.temperature }}°</span>
+  </mat-card-content>
+  <mat-card-actions>
+    <div class="mat-display-1 content-center">
+      <span>Water: </span>
+      <span>{{ weather.water }}°</span>
+    </div>
+  </mat-card-actions>
+</mat-card>

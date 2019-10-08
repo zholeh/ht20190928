@@ -1,1 +1,19 @@
-<p>social-info works!</p>
+<mat-card>
+  <mat-card-header>
+    <div mat-card-avatar></div>
+    <mat-card-title>{{ socialInfo.title }}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content class="content-center">
+    <img [src]="socialInfo.img" alt="" class="round-img" />
+  </mat-card-content>
+  <mat-card-actions>
+    <span class="followers content-center">
+      <span>{{ socialInfo.followers }}</span>
+      <span>Followers</span>
+    </span>
+    <span class="following content-center">
+      <span>{{ socialInfo.following }}</span>
+      <span>Following</span>
+    </span>
+  </mat-card-actions>
+</mat-card>

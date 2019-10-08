@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { IWeather } from 'src/app/mock/mock';
 
 @Component({
   selector: 'app-weather',
@@ -7,5 +8,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WeatherComponent {
 
-
+  @Input()
+  public weather: IWeather[];
 }
